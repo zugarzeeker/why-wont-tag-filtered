@@ -14,6 +14,8 @@ workflows:
     jobs:
     - echo_1
     - echo_2:
+        requires:
+        - echo_1
         filters:
           tags:
-            only: /^v[0-9]+(\.[0-9]+)*/
+            ignore: /^v[0-9]+(\.[0-9]+)*/
