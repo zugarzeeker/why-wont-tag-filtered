@@ -18,5 +18,5 @@ workflows:
         - echo_1
         filters:
           tags:
-            only: vx
+            only: /^config-test.*/
 # test
