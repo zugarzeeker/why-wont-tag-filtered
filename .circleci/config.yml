@@ -18,4 +18,5 @@ workflows:
         - echo_1
         filters:
           tags:
-            ignore: /^v[0-9]+(\.[0-9]+)*/
+            # only: /^v[0-9]+(\.[0-9]+)*/
+            only: /^v*/
