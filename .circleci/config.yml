@@ -1,14 +1,19 @@
 version: 2
 jobs:
-  echo:
-    machine: true
-    steps:
+  - echo_1:
+      machine: true
+      steps:
+      - run: echo "Should run this"
+  - echo_2:
+      machine: true
+      steps:
       - run: echo "Please don't echo..."
 workflows:
   version: 2
-  build_accept_deploy:
+  flow:
     jobs:
-      - echo:
-          filters:
-            tags:
-              only: /^v[0-9]+(\.[0-9]+)*/
+    - echo_1
+    - echo_2:
+        filters:
+          tags:
+            only: /^v[0-9]+(\.[0-9]+)*/
