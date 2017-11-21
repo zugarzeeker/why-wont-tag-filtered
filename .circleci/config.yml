@@ -3,11 +3,11 @@ jobs:
   echo_1:
     machine: true
     steps:
-    - run: echo "Should run this"
+    - run: echo "Should run this (${CIRCLE_TAG})"
   echo_2:
     machine: true
     steps:
-    - run: echo "Please don't echo..."
+    - run: echo "Please don't echo... (${CIRCLE_TAG})"
 workflows:
   version: 2
   flow:
@@ -18,7 +18,6 @@ workflows:
         - echo_1
         filters:
           branches:
-            ignore: /.*/
+            only: master
           tags:
-            # only: /^v[0-9]+(\.[0-9]+)*/
-            only: /^v*/
+            only: /v[0-9]+(\.[0-9]+)*/
