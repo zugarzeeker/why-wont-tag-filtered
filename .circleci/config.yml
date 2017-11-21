@@ -3,7 +3,7 @@ jobs:
   echo:
     machine: true
     steps:
-      - run: echo "Please don't echo"
+      - run: echo "Please don't echo..."
 workflows:
   version: 2
   build_accept_deploy:
