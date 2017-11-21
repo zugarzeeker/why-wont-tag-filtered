@@ -3,11 +3,11 @@ jobs:
   echo_1:
     machine: true
     steps:
-    - run: echo "Should run this"
+    - run: echo "Should run this (${CIRCLE_TAG})"
   echo_2:
     machine: true
     steps:
-    - run: echo "Please don't echo..."
+    - run: echo "Please don't echo... (${CIRCLE_TAG})"
 workflows:
   version: 2
   flow:
