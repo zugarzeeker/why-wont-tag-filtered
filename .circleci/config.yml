@@ -1,13 +1,13 @@
 version: 2
 jobs:
-  - echo_1:
-      machine: true
-      steps:
-      - run: echo "Should run this"
-  - echo_2:
-      machine: true
-      steps:
-      - run: echo "Please don't echo..."
+  echo_1:
+    machine: true
+    steps:
+    - run: echo "Should run this"
+  echo_2:
+    machine: true
+    steps:
+    - run: echo "Please don't echo..."
 workflows:
   version: 2
   flow:
