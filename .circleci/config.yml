@@ -14,14 +14,14 @@ jobs:
     - run: echo "Please don't echo"
 workflows:
   version: 2
-  jobs:
-  - echo_1
-  - echo_2:
-      requires:
-      - echo_1
-      filters:
-        branches:
-          only: master
-        tags:
-          ignore: v0.0.5
-# test
+  flow:
+    jobs:
+    - echo_1
+    - echo_2:
+        requires:
+        - echo_1
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: v0.0.5
