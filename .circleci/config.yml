@@ -19,7 +19,5 @@ workflows:
     - echo_1
     - echo_2:
         filters:
-          branches:
-            ignore: /.*/
           tags:
             only: /v*/
